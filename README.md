@@ -89,7 +89,7 @@ Context SessionInfo şeklinde oluşmaktadır:
 {
 "@timestamp":"2023-12-06T17:10:07.159921407+03:00",
 "message":"Yetki",
-"logger_name":"tr.com.trs.mkys.service.impl.YetkiServiceImpl",
+"logger_name":"com.demo.service.impl.PermissionServiceImpl",
 "level":"INFO",
 "context":{"SESSION_INFO":"{adi='Ömer Faruk', soyadi='İÇEN', kullaniciAdi='demo'}"},
 "application_name":"mkys",
