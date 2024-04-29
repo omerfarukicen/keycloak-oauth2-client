@@ -15,7 +15,7 @@ Validate işlemini Keycloak üzerinden alınan PUBLIC_KEY yardımı ile yapıp S
 **Maven Dependency :**
  ```js
      <dependency>
-        <groupId>tr.com.trs.oauth</groupId>
+        <groupId>com.demo.oauth</groupId>
     <artifactId>oauth2-client</artifactId>
     <version>1.0.0</version>
 </dependency>
@@ -27,13 +27,13 @@ oauth2-client:
     principal-attribute: preferred_username
     public-key: ${JWT_PUBLIC_KEY}
     algorithm: RS256
-  resource-id: kimlik
+  resource-id: demo
   permit-urls:
     - "/actuator/*"
     - "/favicon.ico"
     - "/test/*"
     - "/assets"
-  selfToken: "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJncnhVZW1taU1uZmFuUHIwQ1NXYmlVSmhVTmhqT0doakR3OFZqcWZGclRVIn0..."
+  selfToken: "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJncnhVZW1taU1uZlRVIn0..."
   cors:
     corsEnabled: true
     allowed-origins: "http://localhost:3000"
@@ -76,7 +76,7 @@ Staging ortamından yada Prod ortamından almış olduğunuz token ile işlem ya
       }   
 
 Session Bilgilerine  sessionService.getSessionInfo() ile erişebilirsiniz
-Security Yetki kontrolü için   @PreAuthorize("hasAuthority('YETKI_SAGLIK_POLICE_DUZENLE')") deyimi kullanılacaktır.
+Security Yetki kontrolü için   @PreAuthorize("hasAuthority('YETKI_DUZENLE')") deyimi kullanılacaktır.
 
 ### LOG  işleminde Session 
 Session bilgisi log dosyalarında otomatik MDC Filter yardımıyla eklenmektedir.
@@ -93,8 +93,8 @@ Context SessionInfo şeklinde oluşmaktadır:
 "level":"INFO",
 "context":{"SESSION_INFO":"{adi='Ömer Faruk', soyadi='İÇEN', kullaniciAdi='demo'}"},
 "application_name":"mkys",
-"trace":{"caller_class_name":"tr.com.trs.mkys.service.impl.YetkiServiceImpl",
-  "caller_method_name":"searchYetki","caller_file_name":"YetkiServiceImpl.java",
+"trace":{"caller_class_name":"com.demo.service.impl.Permission",
+  "caller_method_name":"searchPermission","caller_file_name":"PermissionImpl.java",
   "caller_line_number":48
   }}
 ```
